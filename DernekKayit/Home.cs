@@ -15,18 +15,25 @@ namespace DernekKayit
         public Home()
         {
             InitializeComponent();
+
         }
 
-        private void accordionControlElement6_Click(object sender, EventArgs e)
+        public void accordionControlElement6_Click(object sender, EventArgs e)
         {
             YeniUyeKayit yeniUyeKayit = new YeniUyeKayit();
             yeniUyeKayit.Show();
-            this.Hide();
+            
         }
 
         private void Home_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        public void accordionControlElement9_Click(object sender, EventArgs e)
+        {
+            UyeListele uyeListele = new UyeListele();
+            uyeListele.Show();
         }
     }
 }

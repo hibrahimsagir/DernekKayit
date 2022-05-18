@@ -1,0 +1,650 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DernekKayitModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Aidat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="Yil" Type="int" />
+          <Property Name="Tutar" Type="int" />
+          <Property Name="KayitTarihi" Type="date" />
+        </EntityType>
+        <EntityType Name="Cocuk">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cinsiyet" Type="tinyint" Nullable="false" />
+          <Property Name="DogumTarihi" Type="date" />
+          <Property Name="Durum" Type="nvarchar(max)" />
+          <Property Name="KayitTarih" Type="date" />
+        </EntityType>
+        <EntityType Name="EgitimDurum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EgitimDurumAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Es">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Durum" Type="bit" Nullable="false" />
+          <Property Name="KayitTarihi" Type="date" />
+        </EntityType>
+        <EntityType Name="Kasa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IslemTipId" Type="tinyint" Nullable="false" />
+          <Property Name="IslemTurId" Type="tinyint" Nullable="false" />
+          <Property Name="Tutar" Type="float" Nullable="false" />
+          <Property Name="KayitTarihi" Type="date" Nullable="false" />
+          <Property Name="Aciklama" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="KasaIslemTip">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IslemAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KayitTarihi" Type="date" />
+          <Property Name="Silindi" Type="bit" />
+        </EntityType>
+        <EntityType Name="KasaIslemTur">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IslemTurAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KayıtTarihi" Type="date" Nullable="false" />
+          <Property Name="Silindi" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Meslek">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MeslekAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MeslekId" Type="tinyint" />
+          <Property Name="EgitimDurumId" Type="tinyint" Nullable="false" />
+          <Property Name="DurumId" Type="tinyint" Nullable="false" />
+          <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DogumYeri" Type="nvarchar" MaxLength="50" />
+          <Property Name="DogumTarihi" Type="date" />
+          <Property Name="EvAdresi" Type="nvarchar(max)" />
+          <Property Name="CepTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="EvTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="EPosta" Type="nvarchar" MaxLength="50" />
+          <Property Name="KayitTarihi" Type="date" Nullable="false" />
+          <Property Name="MedeniHal" Type="bit" Nullable="false" />
+          <Property Name="Image" Type="image" />
+        </EntityType>
+        <EntityType Name="UyeDurum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UyeDurum" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Aidat_Users">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Aidat" Type="Self.Aidat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Aidat">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cocuk_Users">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Cocuk" Type="Self.Cocuk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cocuk">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Es_Users">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Es" Type="Self.Es" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Es">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kasa_KasaIslemTipleri">
+          <End Role="KasaIslemTip" Type="Self.KasaIslemTip" Multiplicity="1" />
+          <End Role="Kasa" Type="Self.Kasa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KasaIslemTip">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kasa">
+              <PropertyRef Name="IslemTipId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kasa_KasaIslemTurleri">
+          <End Role="KasaIslemTur" Type="Self.KasaIslemTur" Multiplicity="1" />
+          <End Role="Kasa" Type="Self.Kasa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KasaIslemTur">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kasa">
+              <PropertyRef Name="IslemTurId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_EgitimDurum">
+          <End Role="EgitimDurum" Type="Self.EgitimDurum" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EgitimDurum">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="EgitimDurumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Meslek">
+          <End Role="Meslek" Type="Self.Meslek" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Meslek">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="MeslekId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_UyeDurum">
+          <End Role="UyeDurum" Type="Self.UyeDurum" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UyeDurum">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="DurumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DernekKayitModelStoreContainer">
+          <EntitySet Name="Aidat" EntityType="Self.Aidat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cocuk" EntityType="Self.Cocuk" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EgitimDurum" EntityType="Self.EgitimDurum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Es" EntityType="Self.Es" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kasa" EntityType="Self.Kasa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KasaIslemTip" EntityType="Self.KasaIslemTip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KasaIslemTur" EntityType="Self.KasaIslemTur" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Meslek" EntityType="Self.Meslek" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UyeDurum" EntityType="Self.UyeDurum" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Aidat_Users" Association="Self.FK_Aidat_Users">
+            <End Role="User" EntitySet="User" />
+            <End Role="Aidat" EntitySet="Aidat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cocuk_Users" Association="Self.FK_Cocuk_Users">
+            <End Role="User" EntitySet="User" />
+            <End Role="Cocuk" EntitySet="Cocuk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Es_Users" Association="Self.FK_Es_Users">
+            <End Role="User" EntitySet="User" />
+            <End Role="Es" EntitySet="Es" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kasa_KasaIslemTipleri" Association="Self.FK_Kasa_KasaIslemTipleri">
+            <End Role="KasaIslemTip" EntitySet="KasaIslemTip" />
+            <End Role="Kasa" EntitySet="Kasa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kasa_KasaIslemTurleri" Association="Self.FK_Kasa_KasaIslemTurleri">
+            <End Role="KasaIslemTur" EntitySet="KasaIslemTur" />
+            <End Role="Kasa" EntitySet="Kasa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_EgitimDurum" Association="Self.FK_User_EgitimDurum">
+            <End Role="EgitimDurum" EntitySet="EgitimDurum" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Meslek" Association="Self.FK_User_Meslek">
+            <End Role="Meslek" EntitySet="Meslek" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_UyeDurum" Association="Self.FK_User_UyeDurum">
+            <End Role="UyeDurum" EntitySet="UyeDurum" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DernekKayitModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Aidat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="Yil" Type="Int32" />
+          <Property Name="Tutar" Type="Int32" />
+          <Property Name="KayitTarihi" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Aidat_Users" FromRole="Aidat" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Cocuk">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cinsiyet" Type="Byte" Nullable="false" />
+          <Property Name="DogumTarihi" Type="DateTime" Precision="0" />
+          <Property Name="Durum" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KayitTarih" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Cocuk_Users" FromRole="Cocuk" ToRole="User" />
+        </EntityType>
+        <EntityType Name="EgitimDurum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EgitimDurumAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_EgitimDurum" FromRole="EgitimDurum" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Es">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Durum" Type="Boolean" Nullable="false" />
+          <Property Name="KayitTarihi" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Es_Users" FromRole="Es" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Kasa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IslemTipId" Type="Byte" Nullable="false" />
+          <Property Name="IslemTurId" Type="Byte" Nullable="false" />
+          <Property Name="Tutar" Type="Double" Nullable="false" />
+          <Property Name="KayitTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KasaIslemTip" Relationship="Self.FK_Kasa_KasaIslemTipleri" FromRole="Kasa" ToRole="KasaIslemTip" />
+          <NavigationProperty Name="KasaIslemTur" Relationship="Self.FK_Kasa_KasaIslemTurleri" FromRole="Kasa" ToRole="KasaIslemTur" />
+        </EntityType>
+        <EntityType Name="KasaIslemTip">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IslemAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KayitTarihi" Type="DateTime" Precision="0" />
+          <Property Name="Silindi" Type="Boolean" />
+          <NavigationProperty Name="Kasa" Relationship="Self.FK_Kasa_KasaIslemTipleri" FromRole="KasaIslemTip" ToRole="Kasa" />
+        </EntityType>
+        <EntityType Name="KasaIslemTur">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IslemTurAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KayıtTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Silindi" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Kasa" Relationship="Self.FK_Kasa_KasaIslemTurleri" FromRole="KasaIslemTur" ToRole="Kasa" />
+        </EntityType>
+        <EntityType Name="Meslek">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MeslekAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_Meslek" FromRole="Meslek" ToRole="User" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MeslekId" Type="Byte" />
+          <Property Name="EgitimDurumId" Type="Byte" Nullable="false" />
+          <Property Name="DurumId" Type="Byte" Nullable="false" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DogumYeri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DogumTarihi" Type="DateTime" Precision="0" />
+          <Property Name="EvAdresi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CepTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EvTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EPosta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KayitTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MedeniHal" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Aidat" Relationship="Self.FK_Aidat_Users" FromRole="User" ToRole="Aidat" />
+          <NavigationProperty Name="Cocuk" Relationship="Self.FK_Cocuk_Users" FromRole="User" ToRole="Cocuk" />
+          <NavigationProperty Name="EgitimDurum" Relationship="Self.FK_User_EgitimDurum" FromRole="User" ToRole="EgitimDurum" />
+          <NavigationProperty Name="Es" Relationship="Self.FK_Es_Users" FromRole="User" ToRole="Es" />
+          <NavigationProperty Name="Meslek" Relationship="Self.FK_User_Meslek" FromRole="User" ToRole="Meslek" />
+          <NavigationProperty Name="UyeDurum" Relationship="Self.FK_User_UyeDurum" FromRole="User" ToRole="UyeDurum" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UyeDurum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UyeDurum1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_UyeDurum" FromRole="UyeDurum" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Aidat_Users">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Aidat" Type="Self.Aidat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Aidat">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cocuk_Users">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Cocuk" Type="Self.Cocuk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cocuk">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_EgitimDurum">
+          <End Role="EgitimDurum" Type="Self.EgitimDurum" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EgitimDurum">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="EgitimDurumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Es_Users">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Es" Type="Self.Es" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Es">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kasa_KasaIslemTipleri">
+          <End Role="KasaIslemTip" Type="Self.KasaIslemTip" Multiplicity="1" />
+          <End Role="Kasa" Type="Self.Kasa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KasaIslemTip">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kasa">
+              <PropertyRef Name="IslemTipId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kasa_KasaIslemTurleri">
+          <End Role="KasaIslemTur" Type="Self.KasaIslemTur" Multiplicity="1" />
+          <End Role="Kasa" Type="Self.Kasa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KasaIslemTur">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kasa">
+              <PropertyRef Name="IslemTurId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Meslek">
+          <End Role="Meslek" Type="Self.Meslek" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Meslek">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="MeslekId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_UyeDurum">
+          <End Role="UyeDurum" Type="Self.UyeDurum" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UyeDurum">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="DurumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DernekKayitEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Aidat" EntityType="Self.Aidat" />
+          <EntitySet Name="Cocuk" EntityType="Self.Cocuk" />
+          <EntitySet Name="EgitimDurum" EntityType="Self.EgitimDurum" />
+          <EntitySet Name="Es" EntityType="Self.Es" />
+          <EntitySet Name="Kasa" EntityType="Self.Kasa" />
+          <EntitySet Name="KasaIslemTip" EntityType="Self.KasaIslemTip" />
+          <EntitySet Name="KasaIslemTur" EntityType="Self.KasaIslemTur" />
+          <EntitySet Name="Meslek" EntityType="Self.Meslek" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="UyeDurum" EntityType="Self.UyeDurum" />
+          <AssociationSet Name="FK_Aidat_Users" Association="Self.FK_Aidat_Users">
+            <End Role="User" EntitySet="User" />
+            <End Role="Aidat" EntitySet="Aidat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cocuk_Users" Association="Self.FK_Cocuk_Users">
+            <End Role="User" EntitySet="User" />
+            <End Role="Cocuk" EntitySet="Cocuk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_EgitimDurum" Association="Self.FK_User_EgitimDurum">
+            <End Role="EgitimDurum" EntitySet="EgitimDurum" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Es_Users" Association="Self.FK_Es_Users">
+            <End Role="User" EntitySet="User" />
+            <End Role="Es" EntitySet="Es" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kasa_KasaIslemTipleri" Association="Self.FK_Kasa_KasaIslemTipleri">
+            <End Role="KasaIslemTip" EntitySet="KasaIslemTip" />
+            <End Role="Kasa" EntitySet="Kasa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kasa_KasaIslemTurleri" Association="Self.FK_Kasa_KasaIslemTurleri">
+            <End Role="KasaIslemTur" EntitySet="KasaIslemTur" />
+            <End Role="Kasa" EntitySet="Kasa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Meslek" Association="Self.FK_User_Meslek">
+            <End Role="Meslek" EntitySet="Meslek" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_UyeDurum" Association="Self.FK_User_UyeDurum">
+            <End Role="UyeDurum" EntitySet="UyeDurum" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DernekKayitModelStoreContainer" CdmEntityContainer="DernekKayitEntities">
+          <EntitySetMapping Name="Aidat">
+            <EntityTypeMapping TypeName="DernekKayitModel.Aidat">
+              <MappingFragment StoreEntitySet="Aidat">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Yil" ColumnName="Yil" />
+                <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cocuk">
+            <EntityTypeMapping TypeName="DernekKayitModel.Cocuk">
+              <MappingFragment StoreEntitySet="Cocuk">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+                <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+                <ScalarProperty Name="KayitTarih" ColumnName="KayitTarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EgitimDurum">
+            <EntityTypeMapping TypeName="DernekKayitModel.EgitimDurum">
+              <MappingFragment StoreEntitySet="EgitimDurum">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EgitimDurumAdi" ColumnName="EgitimDurumAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Es">
+            <EntityTypeMapping TypeName="DernekKayitModel.Es">
+              <MappingFragment StoreEntitySet="Es">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kasa">
+            <EntityTypeMapping TypeName="DernekKayitModel.Kasa">
+              <MappingFragment StoreEntitySet="Kasa">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IslemTipId" ColumnName="IslemTipId" />
+                <ScalarProperty Name="IslemTurId" ColumnName="IslemTurId" />
+                <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KasaIslemTip">
+            <EntityTypeMapping TypeName="DernekKayitModel.KasaIslemTip">
+              <MappingFragment StoreEntitySet="KasaIslemTip">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IslemAdi" ColumnName="IslemAdi" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KasaIslemTur">
+            <EntityTypeMapping TypeName="DernekKayitModel.KasaIslemTur">
+              <MappingFragment StoreEntitySet="KasaIslemTur">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IslemTurAdi" ColumnName="IslemTurAdi" />
+                <ScalarProperty Name="KayıtTarihi" ColumnName="KayıtTarihi" />
+                <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Meslek">
+            <EntityTypeMapping TypeName="DernekKayitModel.Meslek">
+              <MappingFragment StoreEntitySet="Meslek">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MeslekAdi" ColumnName="MeslekAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="DernekKayitModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MeslekId" ColumnName="MeslekId" />
+                <ScalarProperty Name="EgitimDurumId" ColumnName="EgitimDurumId" />
+                <ScalarProperty Name="DurumId" ColumnName="DurumId" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="DogumYeri" ColumnName="DogumYeri" />
+                <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+                <ScalarProperty Name="EvAdresi" ColumnName="EvAdresi" />
+                <ScalarProperty Name="CepTel" ColumnName="CepTel" />
+                <ScalarProperty Name="EvTel" ColumnName="EvTel" />
+                <ScalarProperty Name="EPosta" ColumnName="EPosta" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="MedeniHal" ColumnName="MedeniHal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UyeDurum">
+            <EntityTypeMapping TypeName="DernekKayitModel.UyeDurum">
+              <MappingFragment StoreEntitySet="UyeDurum">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UyeDurum1" ColumnName="UyeDurum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -17,6 +17,11 @@ namespace DernekKayit
 {
     public partial class YeniUyeKayit : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        DernekKayitEntities db = new DernekKayitEntities();
+        List<Meslek> meslekler;
+        List<EgitimDurum> egitimdurumu;
+        List<UyeDurum> uyelikdurum;
+        
         public YeniUyeKayit()
         {
             InitializeComponent();
@@ -114,16 +119,85 @@ namespace DernekKayit
 
         private void bbiClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.Close();
-            Home home = new Home();
-            home.Show();
-            
+            this.Close();            
         }
 
         private void YeniUyeKayit_Load(object sender, EventArgs e)
         {
             dataGridViewCocuk.DataSource = null;
-            
+            meslekler = db.Meslek.Where(x => x.MeslekAdi != null).ToList();
+            egitimdurumu = db.EgitimDurum.Where(x => x.EgitimDurumAdi != null).ToList();
+            uyelikdurum = db.UyeDurum.Where(x => x.UyeDurum1 != null).ToList();
+            foreach (var meslek in meslekler)
+            {
+                comboBoxMeslek.Properties.Items.Add(meslek.MeslekAdi);
+            }
+            foreach (var egitimdurum in egitimdurumu)
+            {
+                comboBoxEgitimDurum.Properties.Items.Add(egitimdurum.EgitimDurumAdi);
+            }
+            foreach (var uyedurum in uyelikdurum)
+            {
+                comboBoxUyelikDurum.Properties.Items.Add(uyedurum.UyeDurum1);
+            }
+            //comboBoxUyelikDurum.SelectedIndex = 0;
+
+
+        }
+
+        private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (String.IsNullOrEmpty(textAdSoyad.Text))
+            {
+                MessageBox.Show("İsim soyisim boş geçilemez");
+                return;
+            }
+            if (comboBoxEgitimDurum.SelectedItem==null)
+            {
+                MessageBox.Show("Eğitim durumu boş geçilemez");
+                return;
+            }
+            if (comboBoxUyelikDurum.SelectedItem==null)
+            {
+                MessageBox.Show("Üyelik durumu boş geçilemez");
+                return;
+            }
+            try
+            {                
+                var user = new User
+                {
+                    AdSoyad = textAdSoyad.Text,
+                    DogumYeri = String.IsNullOrEmpty(textDogumYeri.Text)?null:textDogumYeri.Text,
+                    DogumTarihi = dateDogumTarihi.DateTime,
+                    MeslekId = meslekler.FirstOrDefault(x => x.MeslekAdi == comboBoxMeslek.SelectedItem).Id,
+                    EgitimDurumId = egitimdurumu.FirstOrDefault(x => x.EgitimDurumAdi == comboBoxEgitimDurum.SelectedItem).Id,
+                    MedeniHal = comboBoxMedeniHal.SelectedText == "Bekar" ? true : false,
+                    EvAdresi = String.IsNullOrEmpty(textEvadres.Text)?null: textEvadres.Text,
+                    CepTel = String.IsNullOrEmpty(textCepTel.Text) ? null : textCepTel.Text,                    
+                    EvTel = String.IsNullOrEmpty(textEvTel.Text) ? null : textEvTel.Text,
+                    EPosta = String.IsNullOrEmpty(textEposta.Text) ? null : textEposta.Text,
+                    DurumId = uyelikdurum.FirstOrDefault(x => x.UyeDurum1 == comboBoxUyelikDurum.SelectedItem).Id,
+                    KayitTarihi = DateTime.Now,
+                    Image = ConvertImageToBinary(pictureEdit1.Image),
+
+                };
+                db.User.Add(user);
+                db.SaveChanges();
+            }
+            catch 
+            {
+                MessageBox.Show("Bir hata ile karşılaşıldı. Lütfen tekrar deneyiniz.");
+            }
+                
+         
+        }
+        byte[] ConvertImageToBinary(Image img)
+        {
+            using (MemoryStream ms=new MemoryStream())
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
         }
     }
 }

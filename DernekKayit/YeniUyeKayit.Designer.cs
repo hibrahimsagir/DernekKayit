@@ -33,7 +33,11 @@ namespace DernekKayit
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YeniUyeKayit));
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.dataGridViewCocuk = new System.Windows.Forms.DataGridView();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.AdSoyad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DogumTarih = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cinsiyeti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hakkinda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textAdSoyad = new DevExpress.XtraEditors.TextEdit();
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSaveAndClose = new DevExpress.XtraBars.BarButtonItem();
@@ -43,22 +47,23 @@ namespace DernekKayit
             this.bbiClose = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.comboBoxEdit3 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.textDogumYeri = new DevExpress.XtraEditors.TextEdit();
+            this.dateDogumTarihi = new DevExpress.XtraEditors.DateEdit();
+            this.comboBoxEgitimDurum = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.comboBoxMedeniHal = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.textEvadres = new DevExpress.XtraEditors.TextEdit();
+            this.textCepTel = new DevExpress.XtraEditors.TextEdit();
+            this.textEvTel = new DevExpress.XtraEditors.TextEdit();
             this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.textEposta = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
             this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
             this.comboBoxEdit4 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.comboBoxUyelikDurum = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.comboBoxMeslek = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -74,6 +79,7 @@ namespace DernekKayit
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -84,32 +90,29 @@ namespace DernekKayit
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.AdSoyad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DogumTarih = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cinsiyeti = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hakkinda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCocuk)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textAdSoyad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textDogumYeri.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateDogumTarihi.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateDogumTarihi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEgitimDurum.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxMedeniHal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEvadres.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textCepTel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEvTel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEposta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxUyelikDurum.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxMeslek.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -125,6 +128,7 @@ namespace DernekKayit
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
@@ -140,30 +144,31 @@ namespace DernekKayit
             // 
             this.dataLayoutControl1.AllowCustomization = false;
             this.dataLayoutControl1.Controls.Add(this.dataGridViewCocuk);
-            this.dataLayoutControl1.Controls.Add(this.textEdit1);
-            this.dataLayoutControl1.Controls.Add(this.textEdit2);
-            this.dataLayoutControl1.Controls.Add(this.dateEdit1);
-            this.dataLayoutControl1.Controls.Add(this.comboBoxEdit1);
-            this.dataLayoutControl1.Controls.Add(this.comboBoxEdit2);
-            this.dataLayoutControl1.Controls.Add(this.comboBoxEdit3);
-            this.dataLayoutControl1.Controls.Add(this.textEdit3);
-            this.dataLayoutControl1.Controls.Add(this.textEdit4);
-            this.dataLayoutControl1.Controls.Add(this.textEdit5);
+            this.dataLayoutControl1.Controls.Add(this.textAdSoyad);
+            this.dataLayoutControl1.Controls.Add(this.textDogumYeri);
+            this.dataLayoutControl1.Controls.Add(this.dateDogumTarihi);
+            this.dataLayoutControl1.Controls.Add(this.comboBoxEgitimDurum);
+            this.dataLayoutControl1.Controls.Add(this.comboBoxMedeniHal);
+            this.dataLayoutControl1.Controls.Add(this.textEvadres);
+            this.dataLayoutControl1.Controls.Add(this.textCepTel);
+            this.dataLayoutControl1.Controls.Add(this.textEvTel);
             this.dataLayoutControl1.Controls.Add(this.textEdit7);
-            this.dataLayoutControl1.Controls.Add(this.textEdit6);
+            this.dataLayoutControl1.Controls.Add(this.textEposta);
             this.dataLayoutControl1.Controls.Add(this.pictureEdit1);
             this.dataLayoutControl1.Controls.Add(this.textEdit8);
             this.dataLayoutControl1.Controls.Add(this.dateEdit2);
             this.dataLayoutControl1.Controls.Add(this.comboBoxEdit4);
             this.dataLayoutControl1.Controls.Add(this.textEdit9);
             this.dataLayoutControl1.Controls.Add(this.simpleButton1);
+            this.dataLayoutControl1.Controls.Add(this.comboBoxUyelikDurum);
+            this.dataLayoutControl1.Controls.Add(this.comboBoxMeslek);
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataLayoutControl1.Location = new System.Drawing.Point(0, 193);
+            this.dataLayoutControl1.Location = new System.Drawing.Point(0, 183);
             this.dataLayoutControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(979, 208, 812, 500);
             this.dataLayoutControl1.Root = this.layoutControlGroup1;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(931, 613);
+            this.dataLayoutControl1.Size = new System.Drawing.Size(931, 623);
             this.dataLayoutControl1.TabIndex = 0;
             // 
             // dataGridViewCocuk
@@ -178,31 +183,62 @@ namespace DernekKayit
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle1.NullValue = "Henüz çocuk bilgisi eklenmemiştir.";
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewCocuk.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewCocuk.Location = new System.Drawing.Point(24, 425);
+            this.dataGridViewCocuk.Location = new System.Drawing.Point(24, 449);
             this.dataGridViewCocuk.Name = "dataGridViewCocuk";
             this.dataGridViewCocuk.RowHeadersWidth = 51;
             this.dataGridViewCocuk.RowTemplate.Height = 24;
-            this.dataGridViewCocuk.Size = new System.Drawing.Size(883, 164);
+            this.dataGridViewCocuk.Size = new System.Drawing.Size(883, 150);
             this.dataGridViewCocuk.TabIndex = 24;
             // 
-            // textEdit1
+            // AdSoyad
             // 
-            this.textEdit1.Location = new System.Drawing.Point(503, 53);
-            this.textEdit1.MenuManager = this.mainRibbonControl;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(408, 22);
-            this.textEdit1.StyleController = this.dataLayoutControl1;
-            this.textEdit1.TabIndex = 5;
+            this.AdSoyad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.AdSoyad.HeaderText = "Adı Soyadı";
+            this.AdSoyad.MinimumWidth = 6;
+            this.AdSoyad.Name = "AdSoyad";
+            this.AdSoyad.Width = 212;
+            // 
+            // DogumTarih
+            // 
+            this.DogumTarih.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DogumTarih.HeaderText = "Doğum Tarihi";
+            this.DogumTarih.MinimumWidth = 6;
+            this.DogumTarih.Name = "DogumTarih";
+            this.DogumTarih.Width = 212;
+            // 
+            // Cinsiyeti
+            // 
+            this.Cinsiyeti.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Cinsiyeti.HeaderText = "Cinsiyeti";
+            this.Cinsiyeti.MinimumWidth = 6;
+            this.Cinsiyeti.Name = "Cinsiyeti";
+            this.Cinsiyeti.Width = 212;
+            // 
+            // Hakkinda
+            // 
+            this.Hakkinda.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Hakkinda.HeaderText = "Genel Durumu Hakkında";
+            this.Hakkinda.MinimumWidth = 6;
+            this.Hakkinda.Name = "Hakkinda";
+            // 
+            // textAdSoyad
+            // 
+            this.textAdSoyad.Location = new System.Drawing.Point(495, 53);
+            this.textAdSoyad.MenuManager = this.mainRibbonControl;
+            this.textAdSoyad.Name = "textAdSoyad";
+            this.textAdSoyad.Size = new System.Drawing.Size(416, 22);
+            this.textAdSoyad.StyleController = this.dataLayoutControl1;
+            this.textAdSoyad.TabIndex = 5;
             // 
             // mainRibbonControl
             // 
-            this.mainRibbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 37, 35, 37);
+            this.mainRibbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(44, 46, 44, 46);
             this.mainRibbonControl.ExpandCollapseItem.Id = 0;
             this.mainRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.mainRibbonControl.ExpandCollapseItem,
@@ -214,23 +250,25 @@ namespace DernekKayit
             this.bbiDelete,
             this.bbiClose});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mainRibbonControl.MaxItemId = 10;
             this.mainRibbonControl.Name = "mainRibbonControl";
-            this.mainRibbonControl.OptionsMenuMinWidth = 385;
+            this.mainRibbonControl.OptionsMenuMinWidth = 481;
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage});
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonControl.Size = new System.Drawing.Size(931, 193);
+            this.mainRibbonControl.Size = new System.Drawing.Size(931, 183);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiSave
             // 
             this.bbiSave.Caption = "Kaydet";
+            this.bbiSave.CausesValidation = true;
             this.bbiSave.Id = 2;
             this.bbiSave.ImageOptions.ImageUri.Uri = "Save";
             this.bbiSave.Name = "bbiSave";
+            this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
             // 
             // bbiSaveAndClose
             // 
@@ -288,139 +326,118 @@ namespace DernekKayit
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiClose);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
             // 
-            // textEdit2
+            // textDogumYeri
             // 
-            this.textEdit2.Location = new System.Drawing.Point(503, 79);
-            this.textEdit2.MenuManager = this.mainRibbonControl;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(114, 22);
-            this.textEdit2.StyleController = this.dataLayoutControl1;
-            this.textEdit2.TabIndex = 6;
+            this.textDogumYeri.Location = new System.Drawing.Point(495, 79);
+            this.textDogumYeri.MenuManager = this.mainRibbonControl;
+            this.textDogumYeri.Name = "textDogumYeri";
+            this.textDogumYeri.Size = new System.Drawing.Size(122, 22);
+            this.textDogumYeri.StyleController = this.dataLayoutControl1;
+            this.textDogumYeri.TabIndex = 6;
             // 
-            // dateEdit1
+            // dateDogumTarihi
             // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(796, 79);
-            this.dateEdit1.MenuManager = this.mainRibbonControl;
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateDogumTarihi.EditValue = null;
+            this.dateDogumTarihi.Location = new System.Drawing.Point(788, 79);
+            this.dateDogumTarihi.MenuManager = this.mainRibbonControl;
+            this.dateDogumTarihi.Name = "dateDogumTarihi";
+            this.dateDogumTarihi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateDogumTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(115, 22);
-            this.dateEdit1.StyleController = this.dataLayoutControl1;
-            this.dateEdit1.TabIndex = 7;
+            this.dateDogumTarihi.Size = new System.Drawing.Size(123, 22);
+            this.dateDogumTarihi.StyleController = this.dataLayoutControl1;
+            this.dateDogumTarihi.TabIndex = 7;
             // 
-            // comboBoxEdit1
+            // comboBoxEgitimDurum
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(503, 105);
-            this.comboBoxEdit1.MenuManager = this.mainRibbonControl;
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.comboBoxEgitimDurum.Location = new System.Drawing.Point(495, 131);
+            this.comboBoxEgitimDurum.MenuManager = this.mainRibbonControl;
+            this.comboBoxEgitimDurum.Name = "comboBoxEgitimDurum";
+            this.comboBoxEgitimDurum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
-            "İnşaat",
-            "Öğretmen",
-            "Ormancı"});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(408, 22);
-            this.comboBoxEdit1.StyleController = this.dataLayoutControl1;
-            this.comboBoxEdit1.TabIndex = 8;
+            this.comboBoxEgitimDurum.Size = new System.Drawing.Size(416, 22);
+            this.comboBoxEgitimDurum.StyleController = this.dataLayoutControl1;
+            this.comboBoxEgitimDurum.TabIndex = 9;
             // 
-            // comboBoxEdit2
+            // comboBoxMedeniHal
             // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(503, 131);
-            this.comboBoxEdit2.MenuManager = this.mainRibbonControl;
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.comboBoxMedeniHal.EditValue = "";
+            this.comboBoxMedeniHal.Location = new System.Drawing.Point(495, 157);
+            this.comboBoxMedeniHal.MenuManager = this.mainRibbonControl;
+            this.comboBoxMedeniHal.Name = "comboBoxMedeniHal";
+            this.comboBoxMedeniHal.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit2.Properties.Items.AddRange(new object[] {
-            "İlkokul",
-            "Ortaokul",
-            "Lise",
-            "Üniversite",
-            "Yüksek Lisans"});
-            this.comboBoxEdit2.Size = new System.Drawing.Size(408, 22);
-            this.comboBoxEdit2.StyleController = this.dataLayoutControl1;
-            this.comboBoxEdit2.TabIndex = 9;
-            // 
-            // comboBoxEdit3
-            // 
-            this.comboBoxEdit3.EditValue = "";
-            this.comboBoxEdit3.Location = new System.Drawing.Point(503, 157);
-            this.comboBoxEdit3.MenuManager = this.mainRibbonControl;
-            this.comboBoxEdit3.Name = "comboBoxEdit3";
-            this.comboBoxEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit3.Properties.Items.AddRange(new object[] {
+            this.comboBoxMedeniHal.Properties.Items.AddRange(new object[] {
             "Bekar",
             "Evli"});
-            this.comboBoxEdit3.Size = new System.Drawing.Size(408, 22);
-            this.comboBoxEdit3.StyleController = this.dataLayoutControl1;
-            this.comboBoxEdit3.TabIndex = 10;
+            this.comboBoxMedeniHal.Size = new System.Drawing.Size(416, 22);
+            this.comboBoxMedeniHal.StyleController = this.dataLayoutControl1;
+            this.comboBoxMedeniHal.TabIndex = 10;
             // 
-            // textEdit3
+            // textEvadres
             // 
-            this.textEdit3.Location = new System.Drawing.Point(503, 183);
-            this.textEdit3.MenuManager = this.mainRibbonControl;
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(408, 22);
-            this.textEdit3.StyleController = this.dataLayoutControl1;
-            this.textEdit3.TabIndex = 11;
+            this.textEvadres.Location = new System.Drawing.Point(495, 183);
+            this.textEvadres.MenuManager = this.mainRibbonControl;
+            this.textEvadres.Name = "textEvadres";
+            this.textEvadres.Size = new System.Drawing.Size(416, 22);
+            this.textEvadres.StyleController = this.dataLayoutControl1;
+            this.textEvadres.TabIndex = 11;
             // 
-            // textEdit4
+            // textCepTel
             // 
-            this.textEdit4.Location = new System.Drawing.Point(503, 209);
-            this.textEdit4.MenuManager = this.mainRibbonControl;
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
-            this.textEdit4.Properties.MaskSettings.Set("mask", "(000) 000-0000");
-            this.textEdit4.Size = new System.Drawing.Size(408, 22);
-            this.textEdit4.StyleController = this.dataLayoutControl1;
-            this.textEdit4.TabIndex = 12;
+            this.textCepTel.Location = new System.Drawing.Point(495, 209);
+            this.textCepTel.MenuManager = this.mainRibbonControl;
+            this.textCepTel.Name = "textCepTel";
+            this.textCepTel.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
+            this.textCepTel.Properties.MaskSettings.Set("mask", "(000) 000-0000");
+            this.textCepTel.Size = new System.Drawing.Size(416, 22);
+            this.textCepTel.StyleController = this.dataLayoutControl1;
+            this.textCepTel.TabIndex = 12;
             // 
-            // textEdit5
+            // textEvTel
             // 
-            this.textEdit5.Location = new System.Drawing.Point(503, 235);
-            this.textEdit5.MenuManager = this.mainRibbonControl;
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
-            this.textEdit5.Properties.MaskSettings.Set("mask", "(000) 000-0000");
-            this.textEdit5.Size = new System.Drawing.Size(408, 22);
-            this.textEdit5.StyleController = this.dataLayoutControl1;
-            this.textEdit5.TabIndex = 13;
+            this.textEvTel.Location = new System.Drawing.Point(495, 235);
+            this.textEvTel.MenuManager = this.mainRibbonControl;
+            this.textEvTel.Name = "textEvTel";
+            this.textEvTel.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
+            this.textEvTel.Properties.MaskSettings.Set("mask", "(000) 000-0000");
+            this.textEvTel.Size = new System.Drawing.Size(416, 22);
+            this.textEvTel.StyleController = this.dataLayoutControl1;
+            this.textEvTel.TabIndex = 13;
             // 
             // textEdit7
             // 
-            this.textEdit7.Location = new System.Drawing.Point(503, 53);
+            this.textEdit7.Location = new System.Drawing.Point(495, 53);
             this.textEdit7.MenuManager = this.mainRibbonControl;
             this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Size = new System.Drawing.Size(408, 22);
+            this.textEdit7.Size = new System.Drawing.Size(416, 22);
             this.textEdit7.StyleController = this.dataLayoutControl1;
             this.textEdit7.TabIndex = 15;
             // 
-            // textEdit6
+            // textEposta
             // 
-            this.textEdit6.Location = new System.Drawing.Point(503, 261);
-            this.textEdit6.MenuManager = this.mainRibbonControl;
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(408, 22);
-            this.textEdit6.StyleController = this.dataLayoutControl1;
-            this.textEdit6.TabIndex = 16;
+            this.textEposta.Location = new System.Drawing.Point(495, 261);
+            this.textEposta.MenuManager = this.mainRibbonControl;
+            this.textEposta.Name = "textEposta";
+            this.textEposta.Size = new System.Drawing.Size(416, 22);
+            this.textEposta.StyleController = this.dataLayoutControl1;
+            this.textEposta.TabIndex = 16;
             // 
             // pictureEdit1
             // 
-            this.pictureEdit1.Location = new System.Drawing.Point(66, 12);
+            this.pictureEdit1.Location = new System.Drawing.Point(12, 12);
             this.pictureEdit1.MenuManager = this.mainRibbonControl;
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit1.Size = new System.Drawing.Size(246, 279);
+            this.pictureEdit1.Size = new System.Drawing.Size(300, 305);
             this.pictureEdit1.StyleController = this.dataLayoutControl1;
             this.pictureEdit1.TabIndex = 17;
             // 
             // textEdit8
             // 
-            this.textEdit8.Location = new System.Drawing.Point(89, 333);
+            this.textEdit8.Location = new System.Drawing.Point(89, 357);
             this.textEdit8.MenuManager = this.mainRibbonControl;
             this.textEdit8.Name = "textEdit8";
             this.textEdit8.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -432,7 +449,7 @@ namespace DernekKayit
             // dateEdit2
             // 
             this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(697, 333);
+            this.dateEdit2.Location = new System.Drawing.Point(697, 357);
             this.dateEdit2.MenuManager = this.mainRibbonControl;
             this.dateEdit2.Name = "dateEdit2";
             this.dateEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -447,7 +464,7 @@ namespace DernekKayit
             // 
             // comboBoxEdit4
             // 
-            this.comboBoxEdit4.Location = new System.Drawing.Point(372, 333);
+            this.comboBoxEdit4.Location = new System.Drawing.Point(372, 357);
             this.comboBoxEdit4.MenuManager = this.mainRibbonControl;
             this.comboBoxEdit4.Name = "comboBoxEdit4";
             this.comboBoxEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -463,12 +480,12 @@ namespace DernekKayit
             // 
             // textEdit9
             // 
-            this.textEdit9.Location = new System.Drawing.Point(199, 359);
+            this.textEdit9.Location = new System.Drawing.Point(191, 383);
             this.textEdit9.MenuManager = this.mainRibbonControl;
             this.textEdit9.Name = "textEdit9";
             this.textEdit9.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textEdit9.Properties.Appearance.Options.UseFont = true;
-            this.textEdit9.Size = new System.Drawing.Size(708, 22);
+            this.textEdit9.Size = new System.Drawing.Size(716, 22);
             this.textEdit9.StyleController = this.dataLayoutControl1;
             this.textEdit9.TabIndex = 22;
             // 
@@ -477,12 +494,37 @@ namespace DernekKayit
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.SteelBlue;
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(24, 385);
+            this.simpleButton1.Location = new System.Drawing.Point(24, 409);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(883, 36);
             this.simpleButton1.StyleController = this.dataLayoutControl1;
             this.simpleButton1.TabIndex = 23;
             this.simpleButton1.Text = "Çocuk Bilgisi Ekle";
+            // 
+            // comboBoxUyelikDurum
+            // 
+            this.comboBoxUyelikDurum.Location = new System.Drawing.Point(495, 287);
+            this.comboBoxUyelikDurum.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxUyelikDurum.MenuManager = this.mainRibbonControl;
+            this.comboBoxUyelikDurum.Name = "comboBoxUyelikDurum";
+            this.comboBoxUyelikDurum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxUyelikDurum.Size = new System.Drawing.Size(416, 22);
+            this.comboBoxUyelikDurum.StyleController = this.dataLayoutControl1;
+            this.comboBoxUyelikDurum.TabIndex = 25;
+            // 
+            // comboBoxMeslek
+            // 
+            this.comboBoxMeslek.EditValue = "";
+            this.comboBoxMeslek.Location = new System.Drawing.Point(495, 105);
+            this.comboBoxMeslek.MenuManager = this.mainRibbonControl;
+            this.comboBoxMeslek.Name = "comboBoxMeslek";
+            this.comboBoxMeslek.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxMeslek.Properties.Tag = "<Null>";
+            this.comboBoxMeslek.Size = new System.Drawing.Size(416, 22);
+            this.comboBoxMeslek.StyleController = this.dataLayoutControl1;
+            this.comboBoxMeslek.TabIndex = 8;
             // 
             // layoutControlGroup1
             // 
@@ -493,7 +535,7 @@ namespace DernekKayit
             this.tabbedControlGroup1,
             this.layoutControlGroup3});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(931, 613);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(931, 623);
             // 
             // layoutControlGroup2
             // 
@@ -503,18 +545,19 @@ namespace DernekKayit
             this.layoutControlItem1});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(304, 283);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(304, 309);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.pictureEdit1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(304, 283);
+            this.layoutControlItem1.Size = new System.Drawing.Size(304, 309);
             this.layoutControlItem1.Text = "Fotoğraf";
             this.layoutControlItem1.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(49, 16);
-            this.layoutControlItem1.TextToControlDistance = 5;
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextToControlDistance = 0;
+            this.layoutControlItem1.TextVisible = false;
             // 
             // tabbedControlGroup1
             // 
@@ -537,7 +580,7 @@ namespace DernekKayit
             this.tabbedControlGroup1.Name = "tabbedControlGroup1";
             this.tabbedControlGroup1.OptionsTableLayoutItem.ColumnIndex = 1;
             this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup4;
-            this.tabbedControlGroup1.Size = new System.Drawing.Size(607, 283);
+            this.tabbedControlGroup1.Size = new System.Drawing.Size(607, 309);
             this.tabbedControlGroup1.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, -2, 2, -2);
             this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup4,
@@ -570,16 +613,17 @@ namespace DernekKayit
             this.layoutControlItem8,
             this.layoutControlItem9,
             this.layoutControlItem10,
-            this.layoutControlItem11});
+            this.layoutControlItem11,
+            this.layoutControlItem19});
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.OptionsItemText.TextToControlDistance = 3;
-            this.layoutControlGroup4.Size = new System.Drawing.Size(587, 234);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(587, 260);
             this.layoutControlGroup4.Text = "Üyeye İlişkin Bilgiler";
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.textEdit1;
+            this.layoutControlItem2.Control = this.textAdSoyad;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(587, 26);
@@ -588,7 +632,7 @@ namespace DernekKayit
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.textEdit2;
+            this.layoutControlItem3.Control = this.textDogumYeri;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(293, 26);
@@ -597,7 +641,7 @@ namespace DernekKayit
             // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.comboBoxEdit1;
+            this.layoutControlItem5.Control = this.comboBoxMeslek;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 52);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(587, 26);
@@ -606,7 +650,7 @@ namespace DernekKayit
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.comboBoxEdit2;
+            this.layoutControlItem6.Control = this.comboBoxEgitimDurum;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 78);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(587, 26);
@@ -615,7 +659,7 @@ namespace DernekKayit
             // 
             // layoutControlItem4
             // 
-            this.layoutControlItem4.Control = this.dateEdit1;
+            this.layoutControlItem4.Control = this.dateDogumTarihi;
             this.layoutControlItem4.Location = new System.Drawing.Point(293, 26);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(294, 26);
@@ -624,7 +668,7 @@ namespace DernekKayit
             // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.comboBoxEdit3;
+            this.layoutControlItem7.Control = this.comboBoxMedeniHal;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 104);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(587, 26);
@@ -633,7 +677,7 @@ namespace DernekKayit
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.textEdit3;
+            this.layoutControlItem8.Control = this.textEvadres;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 130);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(587, 26);
@@ -642,7 +686,7 @@ namespace DernekKayit
             // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.textEdit4;
+            this.layoutControlItem9.Control = this.textCepTel;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 156);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(587, 26);
@@ -651,7 +695,7 @@ namespace DernekKayit
             // 
             // layoutControlItem10
             // 
-            this.layoutControlItem10.Control = this.textEdit5;
+            this.layoutControlItem10.Control = this.textEvTel;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 182);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(587, 26);
@@ -660,12 +704,21 @@ namespace DernekKayit
             // 
             // layoutControlItem11
             // 
-            this.layoutControlItem11.Control = this.textEdit6;
+            this.layoutControlItem11.Control = this.textEposta;
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 208);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(587, 26);
             this.layoutControlItem11.Text = "E-Posta";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(163, 17);
+            // 
+            // layoutControlItem19
+            // 
+            this.layoutControlItem19.Control = this.comboBoxUyelikDurum;
+            this.layoutControlItem19.Location = new System.Drawing.Point(0, 234);
+            this.layoutControlItem19.Name = "layoutControlItem19";
+            this.layoutControlItem19.Size = new System.Drawing.Size(587, 26);
+            this.layoutControlItem19.Text = "Üyelik Durumu";
+            this.layoutControlItem19.TextSize = new System.Drawing.Size(163, 17);
             // 
             // layoutControlGroup5
             // 
@@ -689,7 +742,7 @@ namespace DernekKayit
             this.layoutControlGroup5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup5.Name = "layoutControlGroup5";
             this.layoutControlGroup5.OptionsItemText.TextToControlDistance = 3;
-            this.layoutControlGroup5.Size = new System.Drawing.Size(587, 234);
+            this.layoutControlGroup5.Size = new System.Drawing.Size(587, 260);
             this.layoutControlGroup5.Text = "Eş Bilgisi";
             // 
             // layoutControlItem12
@@ -697,7 +750,7 @@ namespace DernekKayit
             this.layoutControlItem12.Control = this.textEdit7;
             this.layoutControlItem12.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(587, 234);
+            this.layoutControlItem12.Size = new System.Drawing.Size(587, 260);
             this.layoutControlItem12.Text = "Adı Soyadı";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(163, 17);
             // 
@@ -710,9 +763,9 @@ namespace DernekKayit
             this.layoutControlItem16,
             this.layoutControlItem17,
             this.layoutControlItem18});
-            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 283);
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 309);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(911, 310);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(911, 294);
             this.layoutControlGroup3.Text = "Çocuk Bilgileri";
             // 
             // layoutControlItem13
@@ -774,7 +827,7 @@ namespace DernekKayit
             this.layoutControlItem18.Control = this.dataGridViewCocuk;
             this.layoutControlItem18.Location = new System.Drawing.Point(0, 92);
             this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(887, 168);
+            this.layoutControlItem18.Size = new System.Drawing.Size(887, 154);
             this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem18.TextVisible = false;
             // 
@@ -782,37 +835,6 @@ namespace DernekKayit
             // 
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "ribbonPage3";
-            // 
-            // AdSoyad
-            // 
-            this.AdSoyad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.AdSoyad.HeaderText = "Adı Soyadı";
-            this.AdSoyad.MinimumWidth = 6;
-            this.AdSoyad.Name = "AdSoyad";
-            this.AdSoyad.Width = 212;
-            // 
-            // DogumTarih
-            // 
-            this.DogumTarih.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DogumTarih.HeaderText = "Doğum Tarihi";
-            this.DogumTarih.MinimumWidth = 6;
-            this.DogumTarih.Name = "DogumTarih";
-            this.DogumTarih.Width = 212;
-            // 
-            // Cinsiyeti
-            // 
-            this.Cinsiyeti.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Cinsiyeti.HeaderText = "Cinsiyeti";
-            this.Cinsiyeti.MinimumWidth = 6;
-            this.Cinsiyeti.Name = "Cinsiyeti";
-            this.Cinsiyeti.Width = 212;
-            // 
-            // Hakkinda
-            // 
-            this.Hakkinda.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Hakkinda.HeaderText = "Genel Durumu Hakkında";
-            this.Hakkinda.MinimumWidth = 6;
-            this.Hakkinda.Name = "Hakkinda";
             // 
             // YeniUyeKayit
             // 
@@ -829,25 +851,26 @@ namespace DernekKayit
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCocuk)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textAdSoyad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textDogumYeri.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateDogumTarihi.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateDogumTarihi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEgitimDurum.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxMedeniHal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEvadres.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textCepTel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEvTel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEposta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxUyelikDurum.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxMeslek.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -863,6 +886,7 @@ namespace DernekKayit
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
@@ -890,17 +914,16 @@ namespace DernekKayit
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
         private DevExpress.XtraBars.BarButtonItem bbiClose;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        public DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.TextEdit textAdSoyad;
+        public DevExpress.XtraEditors.TextEdit textDogumYeri;
+        private DevExpress.XtraEditors.DateEdit dateDogumTarihi;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEgitimDurum;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxMedeniHal;
+        private DevExpress.XtraEditors.TextEdit textEvadres;
+        private DevExpress.XtraEditors.TextEdit textCepTel;
+        private DevExpress.XtraEditors.TextEdit textEvTel;
         private DevExpress.XtraEditors.TextEdit textEdit7;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
+        private DevExpress.XtraEditors.TextEdit textEposta;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraLayout.TabbedControlGroup tabbedControlGroup1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
@@ -935,5 +958,8 @@ namespace DernekKayit
         private System.Windows.Forms.DataGridViewTextBoxColumn DogumTarih;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cinsiyeti;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hakkinda;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxUyelikDurum;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxMeslek;
     }
 }
