@@ -17,7 +17,7 @@ namespace DernekKayit
         public int Id { get; set; }
         public int UserId { get; set; }
         public string AdSoyad { get; set; }
-        public byte Cinsiyet { get; set; }
+        public string Cinsiyet { get; set; }
         public Nullable<System.DateTime> DogumTarihi { get; set; }
         public string Durum { get; set; }
         public Nullable<System.DateTime> KayitTarih { get; set; }

@@ -35,5 +35,25 @@ namespace DernekKayit
             UyeListele uyeListele = new UyeListele();
             uyeListele.Show();
         }
+
+        private void accordionControlElement8_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Lütfen açılacak olan listeden silme işlemi yapmak istediğiniz kişiyi aratıp bulduktan sonra kaydın sağ tarafında bulunan çarpı işaretine  tıklayınız.", "Mesaj", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            UyeListele uyeListele = new UyeListele();
+            uyeListele.Show();
+        }
+
+        private void accordionControlElement7_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Lütfen açılacak olan listeden güncelleme yapmak istediğiniz kişiyi aratıp bulduktan sonra kaydın üzerine çift tıklayınız.", "Mesaj", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            UyeListele uyeListele = new UyeListele();
+            uyeListele.Show();
+        }
+
+        private void accordionControlElement10_Click(object sender, EventArgs e)
+        {
+            CocukEkle cocukEkle = new CocukEkle();
+            cocukEkle.Show();
+        }
     }
 }

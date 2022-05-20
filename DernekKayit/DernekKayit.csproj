@@ -211,6 +211,7 @@
     <Compile Include="User.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="UyeDTO.cs" />
     <Compile Include="UyeDurum.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -220,12 +221,27 @@
     <Compile Include="UyeListele.Designer.cs">
       <DependentUpon>UyeListele.cs</DependentUpon>
     </Compile>
+    <Compile Include="UyeGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyeGuncelle.Designer.cs">
+      <DependentUpon>UyeGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CocukEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CocukEkle.Designer.cs">
+      <DependentUpon>CocukEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="YeniUyeKayit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="YeniUyeKayit.Designer.cs">
       <DependentUpon>YeniUyeKayit.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CocukEkle.resx">
+      <DependentUpon>CocukEkle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UyeListele.resx">
       <DependentUpon>UyeListele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UyeGuncelle.resx">
+      <DependentUpon>UyeGuncelle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="YeniUyeKayit.resx">
       <DependentUpon>YeniUyeKayit.cs</DependentUpon>
@@ -249,6 +268,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Cocuk.datasource" />
     <None Include="Properties\DataSources\EgitimDurum.datasource" />
     <None Include="Properties\DataSources\Meslek.datasource" />
     <None Include="Properties\DataSources\User.datasource" />

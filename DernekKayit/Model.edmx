@@ -22,7 +22,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Cinsiyet" Type="tinyint" Nullable="false" />
+          <Property Name="Cinsiyet" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="DogumTarihi" Type="date" />
           <Property Name="Durum" Type="nvarchar(max)" />
           <Property Name="KayitTarih" Type="date" />
@@ -166,18 +166,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_User_EgitimDurum">
-          <End Role="EgitimDurum" Type="Self.EgitimDurum" Multiplicity="1" />
-          <End Role="User" Type="Self.User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EgitimDurum">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="User">
-              <PropertyRef Name="EgitimDurumId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_User_Meslek">
           <End Role="Meslek" Type="Self.Meslek" Multiplicity="0..1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -233,10 +221,6 @@
             <End Role="KasaIslemTur" EntitySet="KasaIslemTur" />
             <End Role="Kasa" EntitySet="Kasa" />
           </AssociationSet>
-          <AssociationSet Name="FK_User_EgitimDurum" Association="Self.FK_User_EgitimDurum">
-            <End Role="EgitimDurum" EntitySet="EgitimDurum" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
           <AssociationSet Name="FK_User_Meslek" Association="Self.FK_User_Meslek">
             <End Role="Meslek" EntitySet="Meslek" />
             <End Role="User" EntitySet="User" />
@@ -268,7 +252,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Cinsiyet" Type="Byte" Nullable="false" />
+          <Property Name="Cinsiyet" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
           <Property Name="DogumTarihi" Type="DateTime" Precision="0" />
           <Property Name="Durum" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="KayitTarih" Type="DateTime" Precision="0" />
@@ -638,7 +622,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="true" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

@@ -1,7 +1,7 @@
 ﻿
 namespace DernekKayit
 {
-    partial class YeniUyeKayit
+    partial class UyeGuncelle
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace DernekKayit
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YeniUyeKayit));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UyeGuncelle));
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.gridCocuk = new DevExpress.XtraGrid.GridControl();
             this.cocukBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -298,18 +298,20 @@ namespace DernekKayit
             // 
             // bbiSave
             // 
-            this.bbiSave.Caption = "Kaydet";
+            this.bbiSave.Caption = "Guncelle";
             this.bbiSave.CausesValidation = true;
             this.bbiSave.Id = 2;
             this.bbiSave.ImageOptions.ImageUri.Uri = "Save";
+            this.bbiSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiSave.ImageOptions.SvgImage")));
             this.bbiSave.Name = "bbiSave";
             this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
             // 
             // bbiSaveAndClose
             // 
-            this.bbiSaveAndClose.Caption = "Kaydet ve Kapat";
+            this.bbiSaveAndClose.Caption = "Guncelle ve Kapat";
             this.bbiSaveAndClose.Id = 3;
             this.bbiSaveAndClose.ImageOptions.ImageUri.Uri = "SaveAndClose";
+            this.bbiSaveAndClose.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiSaveAndClose.ImageOptions.SvgImage")));
             this.bbiSaveAndClose.Name = "bbiSaveAndClose";
             this.bbiSaveAndClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSaveAndClose_ItemClick);
             // 
@@ -319,7 +321,6 @@ namespace DernekKayit
             this.bbiSaveAndNew.Id = 4;
             this.bbiSaveAndNew.ImageOptions.ImageUri.Uri = "SaveAndNew";
             this.bbiSaveAndNew.Name = "bbiSaveAndNew";
-            this.bbiSaveAndNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSaveAndNew_ItemClick);
             // 
             // bbiReset
             // 
@@ -358,8 +359,6 @@ namespace DernekKayit
             this.mainRibbonPageGroup.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiSave);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiSaveAndClose);
-            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiSaveAndNew);
-            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiReset);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiDelete);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiClose);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
@@ -487,7 +486,6 @@ namespace DernekKayit
             // 
             // pictureEdit1
             // 
-            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(12, 12);
             this.pictureEdit1.MenuManager = this.mainRibbonControl;
             this.pictureEdit1.Name = "pictureEdit1";
@@ -886,7 +884,7 @@ namespace DernekKayit
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "ribbonPage3";
             // 
-            // YeniUyeKayit
+            // UyeGuncelle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -895,10 +893,8 @@ namespace DernekKayit
             this.Controls.Add(this.dataLayoutControl1);
             this.Controls.Add(this.mainRibbonControl);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "YeniUyeKayit";
+            this.Name = "UyeGuncelle";
             this.Ribbon = this.mainRibbonControl;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.YeniUyeKayit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
@@ -1009,6 +1005,7 @@ namespace DernekKayit
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxMeslek;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
+        private System.Windows.Forms.BindingSource cocukBindingSource;
         private DevExpress.XtraGrid.GridControl gridCocuk;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
@@ -1020,6 +1017,5 @@ namespace DernekKayit
         private DevExpress.XtraGrid.Columns.GridColumn colKayitTarih;
         private DevExpress.XtraGrid.Columns.GridColumn colUser;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
-        private System.Windows.Forms.BindingSource cocukBindingSource;
     }
 }

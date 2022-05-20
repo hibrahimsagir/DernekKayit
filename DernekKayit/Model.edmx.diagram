@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="DernekKayitModel.Kasa" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="DernekKayitModel.KasaIslemTip" Width="1.5" PointX="7.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DernekKayitModel.KasaIslemTur" Width="1.5" PointX="7.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DernekKayitModel.Meslek" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DernekKayitModel.Meslek" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DernekKayitModel.User" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DernekKayitModel.UyeDurum" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
         <AssociationConnector Association="DernekKayitModel.FK_Aidat_Users" ManuallyRouted="false" />
